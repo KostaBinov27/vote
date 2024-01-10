@@ -110,7 +110,7 @@ class Votes_Public {
 	 * @since    1.0.0
 	 */
 	public function user_vote() {
-		$votedIp = get_post_meta(esc_attr( get_the_ID() ), "voted_ip", true);
+		$votedIp = $_COOKIE['userVotedIP'];
 		if ( !wp_verify_nonce( $_REQUEST['nonce'], "user_vote_nonce") || $votedIp == $this->getIPAddress()) {
 		   exit("Code is a poetry!");
 		}   
@@ -211,7 +211,7 @@ class Votes_Public {
 	public function detect_if_voted($postID){
 		$disabled = false;
 		$notVoted = false;
-		$votedIp = get_post_meta(esc_attr( $postID ), "voted_ip", true);
+		$votedIp = $_COOKIE['userVotedIP'];
 		if (!empty($_COOKIE["userVotedIP"]) && $votedIp == $this->getIPAddress()) {
 			$notVoted = true;
 			$data = array("post_id" => $postID);

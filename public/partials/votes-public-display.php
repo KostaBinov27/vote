@@ -16,7 +16,7 @@ $data = $votes->detect_if_voted(get_the_ID()); ?>
 <div class="voting-wrap" id="vote_postID" post-id='<?php echo(get_the_ID()); ?>' sec="<?php echo wp_create_nonce("user_vote_nonce"); ?>" address="<?php echo esc_attr($votes->getIPAddress()); ?>">
     <div class="grid gap-50 grid-mob">
         <div class="text-wrap">
-            <h6><?php _e('WAS THIS ARTICLE HELPFUL?'); ?></h4>
+            <h6><?php echo ($data['voted']) ? 'THANK YOU FOR YOUR FEEDBACK.' : 'WAS THIS ARTICLE HELPFUL?';?></h6>
         </div>
         <div class="buttons-wrap grid gap-20">
             <button id="yes" class="button-yes grid gap-2 vote-buttons <?php echo ($data['voted_value'] === 'yes') ? 'clicked' : ''; ?>" <?php echo ($data['disabled'] == 1) ? 'disabled' : ''; ?>>

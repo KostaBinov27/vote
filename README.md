@@ -6,8 +6,8 @@ This plugin is developed for WordPress on local Docker env.
 
 - Yes / No buttons for voting under each post
 - One time voting feature per post
-- Displaying voting statistics after votaing
-- Responsive desing
+- Displaying voting statistics after voting
+- Responsive design
 - Meta widget included in the posts
 
 ## Technologies used in this plugin
